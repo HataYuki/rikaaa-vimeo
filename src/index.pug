@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+        link(rel="stylesheet", href="style.css")
+        script(src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=doxy")
+        script(src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.js")
+        script(src="entryfile.js")
+        script(src="app.js")
+
+    body
+        div.bg
+        div.wp
+            header
+                h1 rikaaa.org
+            article
+                div.article-wrap
+                    h1
+                        ='<rikaaa-vimeo>'
+                    p The Custom element impliment to Vimeo embeding and lazy-load.
+                    section.demo
+                        h2.title Demo
+                        .
+                            <rikaaa-vimeo id="148239556" vimeoid="148239556" size="1280x720"></rikaaa-vimeo>
+                            <rikaaa-vimeo id="123932286" vimeoid="123932286" size="1280x720"></rikaaa-vimeo>
+                            <rikaaa-vimeo id="155299193" vimeoid="155299193" size="1280x720"></rikaaa-vimeo>
+                            <rikaaa-vimeo id="145706303" vimeoid="145706303" size="1280x720"></rikaaa-vimeo>
+
+                    section.Installation
+                        h2.title Installation
+
+                        section
+                            h3.sub-title HTML
+                            pre.prettyprint.lang-html
+                                = '<!-- If you want to use the Custom Element with browser without not support Webcomponents.-->'
+                                br
+                                = '<script src="https://unpkg.com/@webcomponents/webcomponentsjs@2.2.10/webcomponents-loader.js"></script>'
+                                br
+                                br
+                                = '<script src="rikaaa-vimeo.js"></script>'
+                            
+
+
+                    section.Usage
+                        h2.title Usage
+                        h3.sub-title HTML
+                        pre.prettyprint.lang-html
+                            ='<rikaaa-vimeo id="148239556" vimeoid="148239556" size="1280x720"></rikaaa-vimeo>'
+
+                    section.attribute
+                        h2.title Attributes
+                        table
+                            thead
+                                tr
+                                    td Attribute
+                                    td Required
+                                    td Description
+                            tbody
+                                tr
+                                    td vimeoid = "string"
+                                    td Required
+                                    td The parameter to set Vimeo id.
+                                tr 
+                                    td size = "000x000"
+                                    td Required
+                                    td The parameter to set the size of video by text string. For example, indication of '1280x720' in case of width 1280 pixel and height 720 pixel.
+                                tr 
+                                    td loadtiming = "string"
+                                    td 
+                                    td The parameter to set timing of image loading by text string. This parameter is equivalent with "rootMargin" parameter of Intersection Observer API. The default value is "200px 0px 200px 0px". The unit is pixel or percentage.
+                                tr
+                                    td query = "string"
+                                    td
+                                    td 
+                                        p The parameter to set query string of embed url.
+                                        p 
+                                            = "Default value is \"?autoplay=1&title=0&byline=0&portrait=0\""
+
+                    section.methods
+                        h2.title Methods
+
+                        table
+                            thead
+                                tr
+                                    td Method
+                                    td Description
+                            tbody
+                                tr
+                                    td rikaaavimeo.init(Vimeo id)
+                                    td The method initialize the custom element. The argument Vimeo id.
+                                tr
+                                    td rikaaavimeo.setRoot(Element)
+                                    td The method set Element Node as View-port. The Element is equivalent with "root" parameter of Intersection Observer API.
+
+
+
+                    section.events
+                        h2.title Events
+                        ul
+                            li
+                                h3.sub-title
+                                    = 'addEventListener("load",callback)'
+                                section
+                                    p The event will be triggered when the custom element loaded.
+                                    p 
+                                section
+                                    pre.prettyprint.lang-js
+                                        ='var vimeo1 = document.getElementById("148239556");'
+                                        br
+                                        br
+                                        ='vimeo1.addEventListener("load", function () {'
+                                        br
+                                        ='    console.log("load");'
+                                        br
+                                        ='});'
+
+                            li
+                                h3.sub-title
+                                    = 'addEventListener("loadThumnail",callback)'
+                                section
+                                    p The event will be triggered when the thumnail loaded.
+                                    p 
+                                section
+                                    pre.prettyprint.lang-js
+                                        ='var vimeo1 = document.getElementById("148239556");'
+                                        br
+                                        br
+                                        ='vimeo1.addEventListener("loadThumnail", function (event) {'
+                                        br
+                                        ='    console.log("load thumnail");'
+                                        br
+                                        ='    console.log(event.detail.data);'
+                                        br
+                                        ='});'
+
+
+                            li 
+                                h3.sub-title
+                                    ='addEventListener("loadIframe",callback)'
+                                section
+                                    p The event will be triggered when the Iframe loaded.
+                                section
+                                    pre.prettyprint.lang-js
+                                        ='var vimeo1 = document.getElementById("148239556");'
+                                        br
+                                        br
+                                        ='vimeo1.addEventListener("loadIframe", function () {'
+                                        br
+                                        ='    console.log("load iframe");'
+                                        br
+                                        ='});'
+
+
+                            
+                    
+
+                                        
+                                        
+                                        
+
+                                
+
+
+
+
+                    
