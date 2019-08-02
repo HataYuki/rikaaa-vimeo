@@ -63,3 +63,13 @@ vimeo1.addEventListener("loadIframe", function () {
     console.log("load iframe");
 });
 ```
+
+## Browser Support
+- Google Chrome  
+- Safari  
+- Firefox  
+- Edge  
+- IE 11+ (When using polyfill)
+
+## License
+MIT © [rikaaa.org](http://rikaaa.org/)
